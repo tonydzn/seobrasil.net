@@ -28,7 +28,7 @@ app.post('/', async (req, res) => {
     const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `${prompt}`,
-      temperature: 0, // Valores mais altos significam que o modelo assumirá mais riscos.
+      temperature: 0,5 // Valores mais altos significam que o modelo assumirá mais riscos.
       max_tokens: 4000, // O número máximo de tokens a serem gerados na conclusão. A maioria dos modelos tem um comprimento de contexto de 2.048 tokens (exceto os modelos mais novos, que suportam 4.096).
       top_p: 1, // alternativa à amostragem com temperatura, chamada amostragem de núcleo
       frequency_penalty: 0.9, // Número entre -2,0 e 2,0. Valores positivos penalizam novos tokens com base em sua frequência existente no texto até o momento, diminuindo a probabilidade do modelo repetir a mesma linha textualmente.
